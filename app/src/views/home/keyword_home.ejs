@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="/js/home/keyword_home.js" defer></script>
+        <link rel="stylesheet" href="/css/home/keyword_home.css">
+    </head>
+    <body>
+        <div id="header">
+             <div id="authcheck"></div>
+             <div id="logIO"> </div>
+        </div>
+
+        <div id="upper-tabs">
+         <div id="upper">
+            <div><img src="image/keyword.png" width="50px" height="50px"></div>
+            <div><h2>키워드 모아모아</h2></div>  
+         </div>
+         <div>
+            <ul class="tabs">
+                <li><a href="/">키워드 입력</a></li>
+                <li><a href="/dashboard">대시보드</a></li>
+            </ul>
+        </div>
+        </div>
+        <div id="keyword-list">
+            <div><h2>키워드 신청 내역</h2></div>
+            <div id="keyword-table"> </div>
+        </div>
+        <div id="keyword-register">
+            <h2>키워드 신청</h2>
+            <form>
+                <div id="register-form">
+                      <div>키워드 명: <input id="keyword-nm" type="text" ></div> 
+                       <div> 관련 키워드 수: 
+                       <select id="keyword-cnt">
+                            <option value="1">1</option>                        
+                            <option value="2">2</option>                        
+                            <option value="3">3</option>                        
+                            <option value="4">4</option>                        
+                            <option value="5">5</option>                        
+                       </select>
+                    </div>
+                </div>
+                       <div id="register-button"><p id="button">신청하기</p></div>
+            </form>
+        </div>
+    </body>
+</html>

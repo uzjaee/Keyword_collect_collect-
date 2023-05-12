@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+  background: #76b852;
+  background: rgb(83, 103, 230);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#header {
+  display: flex;
+  justify-content: center;
+}
+
+#authcheck,#logIO ,#upper  {
+  font-family: "Roboto", sans-serif;
+}
+#logIO a {
+  text-decoration: none;
+  color :rgb(255, 255, 255);
+  margin-left: 10px;
+}
+
+#upper div {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 31px;
+}
+#upper-tabs {
+  margin: 0 auto;
+  text-align: center;
+  width: 900px;
+  background-color: #f1f1f1;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 15px 15px 0 rgba(0, 0, 0, 0.24);
+}
+
+ul.tabs {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+ul.tabs li {
+  float: left;
+}
+
+ul.tabs li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.tabs li a:hover:not(.active) {
+  background-color: rgb(83, 103, 230);
+}
+
+ul.tabs li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#keyword-list
+{
+  margin: 0 auto;
+  text-align: center;
+  width: 700px;
+  height: 200px;
+  background-color: white;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 15px 15px 0 rgba(0, 0, 0, 0.24);
+}
+
+#keyword-table
+{
+  position: relative;
+  top:15px;
+  left:271px;
+  
+}
+#keyword-register 
+{
+  margin: 0 auto;
+  text-align: center;
+  width: 700px;
+  height: 200px;
+  background-color: white;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 15px 15px 0 rgba(0, 0, 0, 0.24);
+}
+#register-form{
+  position: relative;
+  top:30px;
+}
+
+#register-button {
+  border-radius: 10%;
+  position:relative;
+  top:120px;
+  margin: 0 auto;
+  text-align: center;
+  width: 130px;
+  height: 50px;
+  background-color: rgb(224, 224, 236);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 15px 15px 0 rgba(0, 0, 0, 0.24);
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+#register-button:hover:not(.active) {
+  background-color: rgb(83, 103, 230);
+}
