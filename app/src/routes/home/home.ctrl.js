@@ -3,6 +3,7 @@ const fs = require('fs');
 const User = require('../../models/User');
 const Keyword = require('../../models/Keyword');
 const KeywordStorage = require('../../models/KeywordStorage');
+const e = require('express');
 
 // view 를 컨트롤 하는 controller 
 
@@ -16,7 +17,15 @@ const output = {
         res.render("home/dashboard")
     },
      login :(req,res) => {
-        res.render("home/login");
+        const cookie = req.headers.cookie;
+        if(!cookie){
+            res.render("home/login");
+        }
+        else {
+            res.setHeader('Set-Cookie', `id=${req.body.id};Max-age=0`);
+            res.render("home/login");
+        }
+        
     },
     register:(req,res) =>{
         res.render("home/register");
@@ -32,10 +41,17 @@ const process = {
     login: async (req, res) =>{
         const user = new User(req.body);
         const response = await user.login();
+        console.log(response);
         if (response.success){
+            console.log('일단 성공');
             res.setHeader('Set-Cookie',`id=${req.body.id}`);
+            return res.json(response);
         }
-        return res.json(response);
+        else {
+            return res.json(response);
+        }
+        // const response = { success : true};
+        // return res.json(response);
     },
     register: async(req,res) =>{
         const user = new User(req.body);
@@ -48,7 +64,11 @@ const process = {
         return res.json(response);
     },
     keywords: async(req,res)=>{
-        const user_id = req.headers.cookie.split('=')[1];
+        const cookie = req.headers.cookie 
+        if (!cookie){
+            return
+        } 
+        const user_id = cookie.split('=')[1];
         const keyword =await KeywordStorage.getKeywordInfo(user_id);
         // console.log(keyword,typeof(keyword));
          res.send(keyword);
