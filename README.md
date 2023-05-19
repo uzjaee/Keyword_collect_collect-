@@ -32,6 +32,7 @@
 
 ### 파일 구조 
 
+<pre>
 📦app
  ┣ 📂bin
  ┃ ┗ 📜listen.js
@@ -70,7 +71,7 @@
  ┣ 📜main.js
  ┣ 📜package-lock.json
  ┗ 📜package.json
-
+</pre>
 
 
 
