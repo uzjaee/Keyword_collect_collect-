@@ -15,7 +15,7 @@ router.get('/logout_process',ctrl.output.logout);
 router.post('/login',ctrl.process.login);
 router.post('/register',ctrl.process.register);
 router.post('/keyword_register',ctrl.process.keyword_register);
-router.post('/keywords',ctrl.process.keywords);
+router.post('/keywords',ctrl.process.keywords_display);
 router.get('/image/keyword.png', ctrl.keywordImg);
 
 module.exports = router;

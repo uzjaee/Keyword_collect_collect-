@@ -65,10 +65,12 @@ ul.tabs li a.active {
 }
 
 #dash-board {
+  /* position: relative;
+  top: 19px; */
   margin: 0 auto;
   text-align: center;
   width: 700px;
-  height: 500px;
+  height: 300px;
   background-color: white;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 15px 15px 0 rgba(0, 0, 0, 0.24);
 }

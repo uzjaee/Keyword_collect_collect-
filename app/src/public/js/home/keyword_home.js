@@ -75,7 +75,11 @@ function getKewordInfo(){
 // 키워드 등록 
 function keyword_register(){
     if(!authcheck){
-        return alert("로그인을 먼저해주세요.")
+         alert("로그인을 먼저해주세요.")
+        return location.href = "/login";
+    }
+    if(!keyword_nm.value){
+        return alert("키워드를 입력해주세요.")
     }
     const req = {
         keyword_name : keyword_nm.value,
@@ -98,6 +102,7 @@ function keyword_register(){
       }
     })
     .catch((err)=>{
+        console.log(err);
        console.error("키워드 입력중 에러 발생 ");
     })
 }

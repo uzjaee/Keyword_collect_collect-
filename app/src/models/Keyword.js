@@ -12,14 +12,23 @@ class Keyword{
     }
     async register(){
         const client = this.body;
-        try {
-            const response = await KeywordStorage.save(client);
+        try 
+        {
+            const duplicate_check = await KeywordStorage.duplicate_check(client); // 키워드 중복 확인 
+            if((duplicate_check[0].exist)){
+                return {success : false , msg :'키워드가 중복됩니다.'}
+            }
+            const response = await KeywordStorage.save(client); // 키워드 저장 
             return response;
-        }catch (err) {
+        }
+        catch (err) 
+        {
             return  {success: false , msg : err};
         }
     }
 }
+   
+
 
 
 module.exports =Keyword;

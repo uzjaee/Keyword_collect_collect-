@@ -29,6 +29,7 @@ class UserStorage {
             });
         })
     }
+    // 탈퇴 기능 구현 필요 
 }
 
 module.exports = UserStorage;

@@ -20,10 +20,22 @@ class KeywordStorage {
                 query,
                 [KeywordInfo.keyword_name,KeywordInfo.keyword_count,KeywordInfo.user_id],
                 (err)=>{
-                    if (err) reject("키워드가 중복됩니다.")
+                    if (err) reject("키워드 등록 중 에러 발생")
                     resolve({success :true});
                 });
         })
+    }
+    static duplicate_check(KeywordInfo){
+        return new Promise((resolve, reject)=>{
+            const query = "select exists(select * from keyword_requests where keyword_nm =? and user_id = ?)as exist; "
+            db.query(
+                query,
+                [KeywordInfo.keyword_name,KeywordInfo.user_id],
+                (err,data)=>{
+                    if(err) reject('중복 체크 중 에러 발생')
+                    resolve(data)
+                });
+        }) 
     }
 }
 

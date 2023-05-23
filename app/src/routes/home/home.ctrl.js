@@ -63,7 +63,7 @@ const process = {
         const response = await keyword.register();
         return res.json(response);
     },
-    keywords: async(req,res)=>{
+    keywords_display: async(req,res)=>{
         const cookie = req.headers.cookie 
         if (!cookie){
             return
